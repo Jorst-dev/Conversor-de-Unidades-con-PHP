@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Temperaturas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div class="container">
+    <h2>Conversor de Temperaturas</h2>
+    <form method="post" action="index.php">
+        <input type="number" step="any" name="valor" placeholder="Ingresa un valor" required>
+        <select name="conversion">
+            <option value="CtoF">Celsius → Fahrenheit</option>
+            <option value="CtoK">Celsius → Kelvin</option>
+            <option value="FtoC">Fahrenheit → Celsius</option>
+            <option value="FtoK">Fahrenheit → Kelvin</option>
+            <option value="KtoC">Kelvin → Celsius</option>
+            <option value="KtoF">Kelvin → Fahrenheit</option>
+        </select>
+        <button type="submit">Convertir</button>
+    </form>
 
+    <div class="resultado">
+        <strong>Resultado: </strong>{{resultado}}<br>
+        <div class="formula">{{formula}}</div>
+    </div>
+</div>
+</body>
+</html>
