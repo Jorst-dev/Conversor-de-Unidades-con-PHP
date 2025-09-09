@@ -1,0 +1,28 @@
+name: CI PHP
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el código del repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Instalar PHP
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      # 3. Validar sintaxis PHP (lint) en tus archivos principales
+      - name: PHP Syntax Check
+        run: |
+          php -l index.php
+          php -l Conversor.php
